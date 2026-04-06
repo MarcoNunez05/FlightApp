@@ -11,6 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.flightapp.components.CustomButton
+import com.example.flightapp.components.CustomInput
+import com.example.flightapp.navigation.AppNavigation
+import com.example.flightapp.screens.LoginScreen
 import com.example.flightapp.ui.theme.FlightAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,28 +24,18 @@ class MainActivity : ComponentActivity() {
         setContent {
             FlightAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    Greeting()
                 }
             }
         }
     }
 }
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
+fun Greeting() {
+    AppNavigation()
+}
+
+@Composable
 fun GreetingPreview() {
-    FlightAppTheme {
-        Greeting("Android")
-    }
 }
